@@ -168,7 +168,7 @@ export default function Dashboard() {
      
       const token = localStorage.getItem('auth-token');
       axios
-        .post('http://localhost:9000/api/addpackage', { ...state }, {headers :{'x-auth-token': token}})
+        .post('https://guarded-citadel-19841.herokuapp.com/api/addpackage', { ...state }, {headers :{'x-auth-token': token}})
         .then(response => {
           console.log(response);
           
@@ -242,7 +242,7 @@ export default function Dashboard() {
 
   const getprofileData = () =>{
     var authToken = localStorage.getItem('auth-token');
-    axios.post('http://localhost:9000/api/getprofile', {usman : "usman"}, {
+    axios.post('https://guarded-citadel-19841.herokuapp.com/api/getprofile', {usman : "usman"}, {
       headers : {
         'x-auth-token' : authToken
       }
@@ -277,7 +277,7 @@ export default function Dashboard() {
     const token = localStorage.getItem('auth-token');
     
     axios
-      .post('http://localhost:9000/dashboarddata',{"name" : "usman"},   {headers :{'x-auth-token': token}})
+      .post('https://guarded-citadel-19841.herokuapp.com/dashboarddata',{"name" : "usman"},   {headers :{'x-auth-token': token}})
       .then(response => {
        // console.log(response);
         console.log(response.data.packages);
@@ -318,7 +318,7 @@ export default function Dashboard() {
     event.preventDefault();
 
     var authToken = localStorage.getItem('auth-token');
-    axios.post('http://localhost:9000/api/addstaff', {...Staffstate}, {headers : {
+    axios.post('https://guarded-citadel-19841.herokuapp.com/api/addstaff', {...Staffstate}, {headers : {
       'x-auth-token' : authToken
     }}).then((response)=>{
 
@@ -386,7 +386,7 @@ export default function Dashboard() {
   const handleProfileEditSubmit = event =>{
     event.preventDefault();
     var authToken = localStorage.getItem('auth-token');
-    axios.post('http://localhost:9000/api/editprofile', {...profile}, {
+    axios.post('https://guarded-citadel-19841.herokuapp.com/api/editprofile', {...profile}, {
       headers : {
         'x-auth-token' : authToken
       }

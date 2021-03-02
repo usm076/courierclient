@@ -106,7 +106,7 @@ export default function Orders(props) {
     
     
     var authToken = localStorage.getItem('auth-token');
-    axios.post('http://localhost:9000/api/getpackagedata', {package_id: id }, {headers : {
+    axios.post('https://guarded-citadel-19841.herokuapp.com/api/getpackagedata', {package_id: id }, {headers : {
       'x-auth-token' : authToken
     }}).then((response)=>{
       console.log(response);
@@ -147,7 +147,7 @@ export default function Orders(props) {
     event.preventDefault();
     //var pack_id= getPackId();
     const authToken = localStorage.getItem('auth-token');
-    axios.post('http://localhost:9000/api/editpackagedata', {...edit  }, {headers : {
+    axios.post('https://guarded-citadel-19841.herokuapp.com/api/editpackagedata', {...edit  }, {headers : {
       'x-auth-token' : authToken
     }}).then((response) =>{
       handleEditClose();
@@ -177,7 +177,7 @@ export default function Orders(props) {
     event.preventDefault();
     //alert(currentId);
     var authToken = localStorage.getItem('auth-token');
-    axios.post('http://localhost:9000/api/addpackagedimension', {...packageState}, {headers:{
+    axios.post('https://guarded-citadel-19841.herokuapp.com/api/addpackagedimension', {...packageState}, {headers:{
       'x-auth-token' : authToken
     }}).then((response)=>{
       console.log(response.data.msg);
@@ -195,7 +195,7 @@ export default function Orders(props) {
   }
   const handlePackageDeletion = (pack_id) =>{
     const authToken = localStorage.getItem('auth-token');
-    axios.post('http://localhost:9000/api/deletepackage', {id : pack_id}, {headers : {
+    axios.post('https://guarded-citadel-19841.herokuapp.com/api/deletepackage', {id : pack_id}, {headers : {
       'x-auth-token' : authToken
     }}).then((response)=>{
 
@@ -216,7 +216,7 @@ export default function Orders(props) {
   function generatePdf(pid) {
     //alert(pid);
     const authToken = localStorage.getItem('auth-token');
-    axios.post('http://localhost:9000/api/generatepdf', {pid}, {headers : {
+    axios.post('https://guarded-citadel-19841.herokuapp.com/api/generatepdf', {pid}, {headers : {
       'x-auth-token' : authToken
     }}).then((response)=>{
       console.log(response);

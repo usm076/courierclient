@@ -14,7 +14,7 @@ export default function withAuth(ComponentToProtect) {
       console.log(token);
       if(token != undefined)
       {
-    fetch('http://localhost:9000/checkToken', {
+    fetch('https://guarded-citadel-19841.herokuapp.com/checkToken', {
       method: 'GET',
      
       headers: { 'x-auth-token': token },

@@ -61,7 +61,7 @@ export default function StaffTable(props) {
   const  deleteStaff = (id) =>
   {
     var authToken = localStorage.getItem('auth-token');
-    axios.post('http://localhost:9000/api/deletestaff', {id}, {headers : {
+    axios.post('https://guarded-citadel-19841.herokuapp.com/api/deletestaff', {id}, {headers : {
       'x-auth-token' : authToken
     }}).then((response)=>{
       console.log(response);
@@ -80,7 +80,7 @@ export default function StaffTable(props) {
   {
     event.preventDefault();
     var authToken = localStorage.getItem('auth-token');
-    axios.post('http://localhost:9000/api/editstaff',{...state},
+    axios.post('https://guarded-citadel-19841.herokuapp.com/api/editstaff',{...state},
     {
       headers : {
         'x-auth-token' : authToken
@@ -110,7 +110,7 @@ export default function StaffTable(props) {
   const getEditData = id =>
   {
     var authToken = localStorage.getItem('auth-token');
-    axios.post('http://localhost:9000/api/getstaffdata', {id}, {headers : {
+    axios.post('https://guarded-citadel-19841.herokuapp.com/api/getstaffdata', {id}, {headers : {
       'x-auth-token' : authToken
     }}).then((response)=>{
       console.log(response);

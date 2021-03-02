@@ -17,7 +17,7 @@ export default function Signup() {
       event.preventDefault();
       
       axios
-        .post('http://localhost:9000/register', { ...state })
+        .post('https://guarded-citadel-19841.herokuapp.com/register', { ...state })
         .then(response => {
           console.log(response);
           if(response.data.proceed==0)
