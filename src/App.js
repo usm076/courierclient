@@ -16,11 +16,11 @@ function App() {
     <Router>
       <Fragment>
         <Route exact path="/" component={withAuth(Dashboard)} />
-        <Switch>
+        {/* <Switch> */}
           <Route exact path="/login" component={LoggedIn(Signin)} />
           <Route exact path="/register" component={LoggedIn(Signup)} />
           <Route exact path="/search" component={Search} />
-        </Switch>
+        {/* </Switch> */}
       </Fragment>
     </Router>
   );
